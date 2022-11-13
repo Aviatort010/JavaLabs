@@ -3,26 +3,24 @@ import functions.*;
 import java.text.DecimalFormat;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws InappropriateFunctionPointException {
+        DecimalFormat decimalFormat = new DecimalFormat("#.########");
 
-        double[] someArr = {0.1, 0.2};
-        FunctionPoint fp = new FunctionPoint(1, 1);
+        // TabulatedFunction someFunc = new LinkedListTabulatedFunction(5, 1, new double[]{1, 2, 3});
+        // TabulatedFunction someFunc = new LinkedListTabulatedFunction(0, 4, new double[]{1});
 
-        //TabulatedFunction someFunc = new TabulatedFunction(6, 6, 3);
-        //TabulatedFunction someFunc = new TabulatedFunction(5, 6, 2);
-        //TabulatedFunction someFunc = new TabulatedFunction(5, 6, someArr);
+        double[] someArr = {0.0, 0.1, 0.2, 0.3, 0.4};
+        TabulatedFunction someFunc = new LinkedListTabulatedFunction(0, 4, someArr);
 
-        TabulatedFunction someFunc = new TabulatedFunction(1, 6, 6);
-        //someFunc.getPoint(-1);
-        //someFunc.getPoint(6);
+        for (int i = 0; i < someFunc.getPointsCount(); ++i){
+            System.out.print(decimalFormat.format(someFunc.getFunctionValue(i)) + "; ");
+        }
+        System.out.println(" ");
 
-        //someFunc.setPoint(-1, fp);
-        //someFunc.setPoint(-1, fp);
+        // someFunc.setPoint(7, new FunctionPoint(3.5, 0.5));
+        // someFunc.setPoint(-1, new FunctionPoint(3.5, 0.5));
+        // someFunc.setPoint(1, new FunctionPoint(3.5, 0.5));
 
-        // and others... "setters" and "getters"...
-
-        //someFunc.deletePoint(-1);
-        //someFunc.deletePoint(7);
-
+        // someFunc.getPoint(-1);
     }
 }

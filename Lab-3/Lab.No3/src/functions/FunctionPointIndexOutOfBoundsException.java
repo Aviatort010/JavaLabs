@@ -1,4 +1,4 @@
 package functions;
 
-public class FunctionPointIndexOutOfBoundsException extends IndexOutOfBoundsException {
+public class FunctionPointIndexOutOfBoundsException extends IndexOutOfBoundsException{
 }
